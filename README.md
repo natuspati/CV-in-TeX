@@ -1,6 +1,6 @@
 ### CV for Python Developer
 
-A single-page, two-column resume.
+A single-page, two-column resume. Get CV [here](main.pdf).
 
 Custom commands are used to provide consistent formatting.
 
