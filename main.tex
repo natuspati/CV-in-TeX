@@ -1,0 +1,296 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.3, 10 May 2020) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+% (v1.6.5b, 27 Jun 2023) forked by Nicolás Omar González Passerino (nicolas.passerino@gmail.com)
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+%% Fork (before v1.6.5a): CV dark mode toggle enabler to use a inverted color palette.
+%% Use the "darkmode" option if you want a color palette used to 
+% \documentclass[10pt,a4paper,ragged2e,withhyper,darkmode]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+%% AltaCV uses the fontawesome5 and academicons fonts
+%% and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Fork (before v1.6.5a): Change the color codes to test your personal variant on any mode
+\ifdarkmode%
+  \definecolor{PrimaryColor}{HTML}{C69749}
+  \definecolor{SecondaryColor}{HTML}{D49B54}
+  \definecolor{ThirdColor}{HTML}{1877E8}
+  \definecolor{BodyColor}{HTML}{ABABAB}
+  \definecolor{EmphasisColor}{HTML}{ABABAB}
+  \definecolor{BackgroundColor}{HTML}{191919}
+\else%
+  \definecolor{PrimaryColor}{HTML}{001F5A}
+  \definecolor{SecondaryColor}{HTML}{0039AC}
+  \definecolor{ThirdColor}{HTML}{F3890B}
+  \definecolor{BodyColor}{HTML}{666666}
+  \definecolor{EmphasisColor}{HTML}{2E2E2E}
+  \definecolor{BackgroundColor}{HTML}{E2E2E2}
+\fi%
+
+\colorlet{name}{PrimaryColor}
+\colorlet{tagline}{SecondaryColor}
+\colorlet{heading}{PrimaryColor}
+\colorlet{headingrule}{ThirdColor}
+\colorlet{subheading}{SecondaryColor}
+\colorlet{accent}{SecondaryColor}
+\colorlet{emphasis}{EmphasisColor}
+\colorlet{body}{BodyColor}
+\pagecolor{BackgroundColor}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\small\bfseries}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+\NewInfoField{twitter}{\faTwitter}[https://twitter.com/]
+
+%% sample.bib contains your publications
+%% \addbibresource{main.bib}
+
+\begin{document}
+    \name{Nurlat Bekdullayev}
+    % \tagline{Python Developer}
+    %% You can add multiple photos on the left or right
+    \photoL{4cm}{IMG_0473}
+
+    \personalinfo{
+        \email{nurlat.bekdullayev@alumni.nu.edu.kz}\smallskip
+        \phone{+7-706-478-0075}
+        \location{Kazakhstan}\\
+        \github{natuspati}
+        \linkedin{nurlat}
+        \twitter{natuspati}
+        %\homepage{nicolasomar.me}
+        %\medium{nicolasomar}
+        %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+        % \orcid{0000-0000-0000-0000}
+        %% You can add your own arbtrary detail with
+        %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+        % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+        %% Or you can declare your own field with
+        %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+        % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+        % \gitlab{your_id}
+    }
+    
+    \makecvheader
+    %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+    % \AtBeginEnvironment{itemize}{\small}
+    
+    %% Set the left/right column width ratio to 6:4.
+    \columnratio{0.25}
+
+    % Start a 2-column paracol. Both the left and right columns will automatically
+    % break across pages if things get too long.
+    \begin{paracol}{2}
+        % ----- TECH STACK -----
+        \cvsection{TECH STACK}
+            \cvtag{Django}
+            \cvtag{FastAPI}
+            
+            \cvtag{Django REST Framework}
+            
+            \cvtag{Celery}
+            \cvtag{Pytest}
+            \cvtag{Asyncio}
+            \cvtag{PyTorch}
+            \cvtag{openCV}
+            \medskip
+            
+            \cvtag{Docker}
+            \cvtag{PostgreSQL}
+            \cvtag{AWS}
+            \cvtag{MongoDB}
+            \cvtag{Git}
+
+            \cvtag{Github Actions}
+            \medskip
+
+            \cvtag{React}
+            \cvtag{ElasticUI}
+            \medskip
+
+            \cvtag{Python}
+            \cvtag{SQL}
+            
+            \cvtag{Javascript}
+            \cvtag{Matlab}
+        % ----- TECH STACK -----
+
+        % ----- PRINCIPLES -----
+        \cvsection{PRINCIPLES}
+            \cvtag{PEP 8}
+            \cvtag{TDD}
+            \cvtag{BDD}
+            \cvtag{DRY}
+            \cvtag{SOLID}
+            \cvtag{OOP}
+            \cvtag{Agile}
+            \cvtag{Scrum}
+            
+            %% Yeah I didn't spend too much time making all the
+            %% spacing consistent... sorry. Use \smallskip, \medskip,
+            %% \bigskip, \vpsace etc to make ajustments.
+        % ----- PRINCIPLES -----
+        
+        % ----- LANGUAGES -----
+        \cvsection{Languages}
+            \cvlang{English}{C1, IELTS 8.0}
+            
+            \cvlang{Kazakh}{Native}
+            
+            \cvlang{Russian}{Fluent}
+            %% Yeah I didn't spend too much time making all the
+            %% spacing consistent... sorry. Use \smallskip, \medskip,
+            %% \bigskip, \vpsace etc to make ajustments.
+        % ----- LANGUAGES -----
+            
+        % ----- REFERENCES -----
+        \cvsection{Certificates}
+            \withglobe{Advanced Django: Mastering Django and Django Rest Framework Specialization}{\href{https://www.coursera.org/account/accomplishments/specialization/certificate/25VSHAPPR553}{Coursera}}{}
+            \divider
+
+            \withglobe{Django for Everybody}{\href{https://www.coursera.org/account/accomplishments/specialization/certificate/MDYWCZU7WH52}{University of Michigan}}{}
+            \divider
+
+            \withglobe{Containerized Applications on AWS}{\href{https://www.coursera.org/account/accomplishments/certificate/KNQTAQ6UHYZG}{AWS Training}}{}
+            \divider
+        % ----- REFERENCES -----
+        
+        % ----- MOST PROUD -----
+        % \cvsection{Most Proud of}
+        
+        % \cvachievement{\faTrophy}{Fantastic Achievement}{and some details about it}\\
+        % \divider
+        % \cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}\\
+        % \divider
+        % \cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
+        % ----- MOST PROUD -----
+        
+        % \cvsection{A Day of My Life}
+        
+        % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+        % \wheelchart{outer radius}{inner radius}{
+        % comma-separated list of value/text width/color/detail}
+        % \wheelchart{1.5cm}{0.5cm}{%
+        %   6/8em/accent!30/{Sleep,\\beautiful sleep},
+        %   3/8em/accent!40/Hopeful novelist by night,
+        %   8/8em/accent!60/Daytime job,
+        %   2/10em/accent/Sports and relaxation,
+        %   5/6em/accent!20/Spending time with family
+        % }
+        
+        % use ONLY \newpage if you want to force a page break for
+        % ONLY the current column
+        \newpage
+        
+        %% Switch to the right column. This will now automatically move to the second
+        %% page if the content is too long.
+        \switchcolumn
+        
+        % ----- ABOUT ME -----
+        \cvsection{About Me}
+            \begin{quote}
+                Self-thought back-end developer started in 2022, PhD student in Computational Mechanics in the past. 
+            \end{quote}
+        % ----- ABOUT ME -----
+
+        % ----- PROJECTS -----
+        \cvsection{Projects}
+            \cvtest{Phrosty}{\cvreference{\faGithub}{https://github.com/natuspati/phrosty}}{Service where users can request a cleaning and fulfill a request on-demand}{}
+            \begin{itemize}
+                \item Developed using TDD and Pytest ecosystem
+                \item Utilizes asynchronous FastAPI and pure SQL ORM for high performance
+            \end{itemize}
+            
+            \cvtest{Country Guess Game}{\cvreference{\faGithub}{https://github.com/natuspati/GuessCountryGame}}{Daily game where you guess a country by facts about it
+            }{}
+            \begin{itemize}
+                \item Celery and Django Sessions replace traditional authentication and user data persistence
+                \item CD pipeline using Docker, Github Actions and AWS EC2/ECR
+            \end{itemize}
+        % ----- PROJECTS -----
+        
+        % ----- EXPERIENCE -----
+        \cvsection{Experience}
+            \cvevent{Research Assistant}{\href{https://vccimaging.org/}{Computational Imaging Group}}{Sep 2022 -- May 2023}{Thuwal, Saudi Arabia}
+            \begin{itemize}
+                \item Developed scripts for camera calibration using PyTorch
+                \item Translated and extended openCV calibration tool-box from C++ to Python
+                \item Measured performance with multiprocess sensitivity analysis
+            \end{itemize}
+            \divider
+            
+            \cvevent{Research Assistant}{\href{https://composites.kaust.edu.sa/}{Composite Material Simulation Laboratory}}{Jul 2022 -- May 2023}{Thuwal, Saudi Arabia}
+            \begin{itemize}
+                \item Integrated Python-openCV library with multi-camera imaging system
+                \item Developed a new imaging system based on reflective materials
+            \end{itemize}
+        % ----- EXPERIENCE -----
+        
+        % ----- EDUCATION -----
+        \cvsection{Education}
+            \cvevent{MSc in Computational Mechanics}{\href{https://www.kaust.edu.sa/en/}{King Abdullah University of Science and Technology}}{Sep 2019 -- Jun 2021}{Thuwal, Saudi Arabia}
+
+            \divider
+            
+            \cvevent{BEng in Mechanical Engineering	}{\href{https://nu.edu.kz/}{Nazarbayev University	}}{Sep 2015 -- Jun 2019}{Astana, Kazakhstan}
+            % \begin{itemize}
+            %     \item GPA: 3.61
+            % \end{itemize}
+        % ----- EDUCATION -----
+        
+        
+    \end{paracol}
+\end{document}
