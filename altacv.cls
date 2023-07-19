@@ -300,6 +300,11 @@
   \par\medskip\normalsize
   \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\color{accent}\color{emphasis}~#3}}}
   \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\color{accent}\faMapMarker\color{emphasis}~#4}}}\par
+  \normalsize
+}
+
+\newcommand{\cvComProject}[1]{%
+  {\large\color{emphasis}#1}
   \medskip\normalsize
 }
 
